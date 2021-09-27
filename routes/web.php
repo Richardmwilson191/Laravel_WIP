@@ -50,3 +50,6 @@ Route::get("/admin/index", [AdminController::class, "index"])->name("Admin");
 Route::get('/admin/course', [CourseController::class, "index"])->name('course.index');
 Route::get('/admin/course/create', [CourseController::class, "create"])->name('course.create');
 Route::post('/admin/course/store', [CourseController::class, "store"])->name('course.store');
+Route::get('/admin/course/edit/{id}', [CourseController::class, "edit"])->name('course.edit');
+Route::post('/admin/course/update/{id}', [CourseController::class, "update"])->name('course.update');
+Route::delete('/admin/course/destroy/{id}', [CourseController::class, "destroy"])->name('course.destroy');

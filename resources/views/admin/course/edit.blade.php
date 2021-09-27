@@ -19,8 +19,7 @@
                             <label for="type_id" required>Course Type</label>
                             <select class="py-1 w-full" name="type_id" id="">
                                 @foreach ($course_types as $type)
-                                    <option {{ old('type_id') === 'active' ? 'selected' : '' }}
-                                        value="{{ $type->id }}">
+                                    <option {{ old('type_id') === $type->course_type ? 'selected' : '' }} value="active">
                                         {{ $type->course_type }}
                                     </option>
                                 @endforeach

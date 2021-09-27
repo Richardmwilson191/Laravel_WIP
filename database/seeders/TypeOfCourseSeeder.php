@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TypesOfCourse;
 use Illuminate\Database\Seeder;
 
 class TypeOfCourseSeeder extends Seeder
@@ -21,7 +22,7 @@ class TypeOfCourseSeeder extends Seeder
             'desc' => 'Category description 2'
         ],
         [
-            'course_type' => 'Science',
+            'course_type' => 'Business',
             'desc' => 'Category description 3'
         ],
 
@@ -30,7 +31,7 @@ class TypeOfCourseSeeder extends Seeder
     public function run()
     {
         foreach ($this->types as $type) {
-            TypeOfCourse::create($type);
+            TypesOfCourse::create($type);
         }
     }
 }
