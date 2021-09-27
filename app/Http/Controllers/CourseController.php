@@ -43,12 +43,12 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course_types = TypesOfCourse::all()->sortBy('name');
-        $courses = DB::table('courses')
+        $course = DB::table('courses')
             ->join('types_of_courses as toc', 'courses.id', '=', 'toc.id')
             ->where('courses.id', $id)
-            ->get();
+            ->first();
 
-        return view('admin.course.edit', ['courses' => $courses, 'course_types' => $course_types]);
+        return view('admin.course.edit', ['course' => $course, 'course_types' => $course_types]);
     }
 
     public function update(Request $request, $id)

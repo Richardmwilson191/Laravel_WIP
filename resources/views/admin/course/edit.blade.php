@@ -7,26 +7,29 @@
                 <div class="flex justify-between my-2">
                     <h2 class="text-2xl text-gray-800">Create Course</h2>
                 </div>
-                <form action="{{ route('course.store') }}" method="POST">
+                <form action="{{ route('course.update', $course->id) }}" method="POST">
                     @csrf
                     <div class="input-container">
                         <div class="my-4">
                             <label for="name" required>Name</label>
-                            <input class="shadow-md w-full py-1" type="text" name="name" id="" value="{{ old('name') }}">
+                            <input class="shadow-md w-full py-1" type="text" name="name" id=""
+                                value="{{ old('name') ? old('name') : $course->course_name }}">
                             <div class="text-red-500">@error('name') {{ $message }} @enderror</div>
                         </div>
                         <div>
                             <label for="type_id" required>Course Type</label>
                             <select class="py-1 w-full" name="type_id" id="">
                                 @foreach ($course_types as $type)
-                                    <option {{ old('type_id') === $type->course_type ? 'selected' : '' }} value="active">
+                                    <option {{ old('type_id') === $type->course_type ? 'selected' : '' }}
+                                        value="{{ $type->id }}">
                                         {{ $type->course_type }}
                                     </option>
                                 @endforeach
                             </select>
+                            <div class="text-red-500">@error('name') {{ $message }} @enderror</div>
                         </div>
                         <div>
-                            <button class="bg-blue-600 py-1 px-4 my-4 text-white" type="submit">Create</button>
+                            <button class="bg-blue-600 py-1 px-4 my-4 text-white" type="submit">Update</button>
                         </div>
                     </div>
                 </form>
