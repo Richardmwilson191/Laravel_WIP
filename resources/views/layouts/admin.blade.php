@@ -17,12 +17,12 @@
         <ul>
             <li class="py-2 px-2 bg-blue-600 text-white cursor-pointer">Students</li>
             <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3  hover:text-white cursor-pointer">Courses</li>
-            <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3  hover:text-white cursor-pointer">Course Type</li>
+            <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3  hover:text-white cursor-pointer"><a href="{{ route('show.course') }}"> Course Type</a></li>
             <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3  hover:text-white cursor-pointer">Course Selection</li>
             <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3 hover:text-white cursor-pointer">Logout</li>
         </ul>
     </div>
-    <div class="w-10/12 h-full flex justify-center items-center bg-gray-300">
+    <div class="w-10/12 h-full flex justify-center items-center bg-gray-00">
 
         <div class="h-full w-full">
             @yield("content")

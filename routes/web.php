@@ -6,7 +6,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CoursesController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +45,11 @@ Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->n
 
 
 // Admin
-
 Route::get("/admin/index",[AdminController::class,"index"])->name("Admin");
+//COURSES
+route::get('courses',[CoursesController::class,'show_course'])->name('show.course');
+route::post('courses/add',[CoursesController::class,'add_courses'])->name('add.course');
+route::delete('courses/{id}/delete',[CoursesController::class,'delete'])->name('delete.course');
 
 
 
