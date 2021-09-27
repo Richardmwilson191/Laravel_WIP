@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div class="container w-screen h-screen flex">
 
         <div class=" bg-white p-4 h-full w-2/12 relative">
