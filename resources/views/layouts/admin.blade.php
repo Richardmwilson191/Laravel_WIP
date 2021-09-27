@@ -26,7 +26,14 @@
                 </li>
                 <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3  hover:text-white cursor-pointer">Course
                     Selection</li>
-                <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3 hover:text-white cursor-pointer">Logout</li>
+                <li class="py-2 px-2 hover:bg-blue-600 duration-300 mt-3 hover:text-white cursor-pointer">
+                    <form action="{{ route('Logout') }}" method="post">
+                        @csrf
+                        <button
+                            class="p-2 bg-red-500 px-4 text-white rounded hover:bg-red-400 duration-300">Logout</button>
+
+                    </form>
+                </li>
                 <a href="/">
                     <li
                         class="py-2 px-2 w-4/5 hover:bg-blue-600 duration-300 mt-3 hover:text-white cursor-pointer bottom-0 absolute">
