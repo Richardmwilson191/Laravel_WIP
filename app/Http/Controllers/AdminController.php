@@ -12,7 +12,7 @@ class AdminController extends Controller
         {
             return redirect(route('Dashboard'));
         }
-        elseif(auth()->user() != NULL and auth()->user()->is_admin == True)
+        elseif(auth()->user() != NULL and auth()->user()->is_admin)
         {
             return view("admin.index");
         }
